@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package incoming_call_service;
+
+option go_package = "gen/incoming_call_service";
+
+message IncomingCallRequest {
+  string call_from = 1;
+  string call_to = 2;
+}
+
+message IncomingCallResponse {}
+
+service IncomingCallService {
+  rpc HandleCall(IncomingCallRequest) returns (IncomingCallResponse){};
+}
